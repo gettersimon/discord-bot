@@ -26,22 +26,12 @@ async def on_member_join(member):
 async def on_message(message):
     if message.author == bot.user:
         return
-
-    if "shit" in message.content.lower():
+    bad_words = ["shit", "fuck", "shut up", "kurva", "debil"]
+for word in bad_words:
+    if word in message.content.lower():
         await message.delete()
         await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
-            if "fuck" in message.content.lower():
-        await message.delete()
-        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
-    if "shut up" in message.content.lower():
-        await message.delete()
-        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
-    if "kurva" in message.content.lower():
-        await message.delete()
-        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
-    if "debil" in message.content.lower():
-        await message.delete()
-        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
+        break
 
     await bot.process_commands(message)
 
