@@ -30,6 +30,18 @@ async def on_message(message):
     if "shit" in message.content.lower():
         await message.delete()
         await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
+            if "fuck" in message.content.lower():
+        await message.delete()
+        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
+    if "shut up" in message.content.lower():
+        await message.delete()
+        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
+    if "kurva" in message.content.lower():
+        await message.delete()
+        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
+    if "debil" in message.content.lower():
+        await message.delete()
+        await message.channel.send(f"{message.author.mention} - dont use that word or we will timeout or ban!")
 
     await bot.process_commands(message)
 
